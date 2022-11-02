@@ -1,12 +1,22 @@
 import "./App.css";
-import Home from "./pages/Home";
+import Homepage from "./pages/Homepage";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Aboutuspage from './pages/Aboutuspage'
+import Ourservicepage from "./pages/Ourservicepage"
+import Productspage from "./pages/Productspage";
+import Contactuspage from "./pages/Contactuspage";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <h1>OKKKKK</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/aboutus" element={<Aboutuspage />} />
+        <Route path="/ourservices" element={<Ourservicepage />} />
+        <Route path="/products" element={<Productspage />} />
+        <Route path="/contactus" element={<Contactuspage />} />
+      </Routes>
+    </Router>
   );
 }
 
